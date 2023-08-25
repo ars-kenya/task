@@ -1,0 +1,31 @@
+
+application {
+  config {
+    baseName task
+    applicationType monolith
+    packageName com.logicea.task
+    authenticationType jwt
+    prodDatabaseType mysql
+  }
+  entities *
+}
+
+enum CardStatus {
+	TODO (Todo),
+    INPROGRESS (InProgress),
+    DONE (Done)
+}
+
+entity Card {
+	name String maxlength(30) required,
+    color String maxlength(6),
+    description String maxlength(200),
+    dateCreated Instant required,
+    dateModified Instant required,
+    status CardStatus required
+}
+
+dto all with mapstruct
+service all with serviceClass
+filter all
+paginate all with pagination
