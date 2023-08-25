@@ -1,15 +1,3 @@
-
-application {
-  config {
-    baseName task
-    applicationType monolith
-    packageName com.logicea.task
-    authenticationType jwt
-    prodDatabaseType mysql
-  }
-  entities *
-}
-
 enum CardStatus {
 	TODO (Todo),
     INPROGRESS (InProgress),
